@@ -23,28 +23,25 @@ namespace Presentation
             MessageBox.Show("Mostrando reportes", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        // Supongamos que pnReportsCTA es el nombre de un formulario, no un panel
+        // Hay que instanciar el form para que funcione
 
-        private Form frmMetric = new frmMetrics(); 
+        private Form frmMetric = new frmMetrics();
 
-        private void btnReports_Click(object sender, EventArgs e)
-        {
-            openReportsChild(this.frmMetric);
-        }
+        private Form frmFilter = new frmFilters();
 
         private void openReportsChild(object formChild)
         {
-            Form pnlSale = formChild as Form;
-            if (pnlSale != null) // Asegúrate de que pnlSale no sea null
+            Form pnlReports = formChild as Form;
+            if (pnlReports != null) // Asegúrate de que pnlSale no sea null
             {
                 if (this.pnMainContainer.Controls.Count > 0)
                     this.pnMainContainer.Controls.RemoveAt(0);
 
-                pnlSale.TopLevel = false;
-                pnlSale.Dock = DockStyle.Fill;
-                this.pnMainContainer.Controls.Add(pnlSale);
-                this.pnMainContainer.Tag = pnlSale;
-                pnlSale.Show();
+                pnlReports.TopLevel = false;
+                pnlReports.Dock = DockStyle.Fill;
+                this.pnMainContainer.Controls.Add(pnlReports);
+                this.pnMainContainer.Tag = pnlReports;
+                pnlReports.Show();
             }
             else
             {
@@ -52,6 +49,35 @@ namespace Presentation
             }
         }
 
+        private void openFiltersChild(object formChild)
+        {
+            Form pnlFilters = formChild as Form;
+            if (pnlFilters != null) // Asegúrate de que pnlSale no sea null
+            {
+                if (this.pnMainContainer.Controls.Count > 0)
+                    this.pnMainContainer.Controls.RemoveAt(0);
 
+                pnlFilters.TopLevel = false;
+                pnlFilters.Dock = DockStyle.Fill;
+                this.pnMainContainer.Controls.Add(pnlFilters);
+                this.pnMainContainer.Tag = pnlFilters;
+                pnlFilters.Show();
+            }
+            else
+            {
+                MessageBox.Show("El formulario no es válido.");
+            }
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            openReportsChild(this.frmMetric);
+        }
+
+        private void btnFilters_Click(object sender, EventArgs e)
+        {
+            openFiltersChild(this.frmFilter);
+        }
     }
 }
+
