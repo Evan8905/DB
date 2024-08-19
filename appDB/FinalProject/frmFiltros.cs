@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main
+namespace FinalProject
 {
-    public partial class frmDevs : Form
+    public partial class frmFiltros : Form
     {
-        public frmDevs()
+        public frmFiltros()
         {
             InitializeComponent();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

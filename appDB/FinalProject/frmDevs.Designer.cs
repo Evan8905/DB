@@ -1,6 +1,6 @@
-﻿namespace Chart
+﻿namespace FinalProject
 {
-    partial class Chart
+    partial class frmDevs
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
-            // Chart
+            // frmDevs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.Name = "Chart";
-            this.Text = "Chart";
-            this.Load += new System.EventHandler(this.Chart_Load);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmDevs";
+            this.Text = "frmDevs";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }
-

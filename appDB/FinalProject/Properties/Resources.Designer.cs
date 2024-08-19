@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Presentation.Properties {
+namespace FinalProject.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Presentation.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Presentation.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FinalProject.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,9 +63,9 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dahboard32pxBlack {
+        internal static System.Drawing.Bitmap filtering {
             get {
-                object obj = ResourceManager.GetObject("dahboard32pxBlack", resourceCulture);
+                object obj = ResourceManager.GetObject("filtering", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dashboard32px {
+        internal static System.Drawing.Bitmap information {
             get {
-                object obj = ResourceManager.GetObject("dashboard32px", resourceCulture);
+                object obj = ResourceManager.GetObject("information", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap dashboardIcon {
+        internal static System.Drawing.Bitmap reportIcon {
             get {
-                object obj = ResourceManager.GetObject("dashboardIcon", resourceCulture);
+                object obj = ResourceManager.GetObject("reportIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,19 +93,9 @@ namespace Presentation.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap layout__1_ {
+        internal static System.Drawing.Bitmap rLogo {
             get {
-                object obj = ResourceManager.GetObject("layout (1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Reports {
-            get {
-                object obj = ResourceManager.GetObject("Reports", resourceCulture);
+                object obj = ResourceManager.GetObject("rLogo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Presentation
+namespace FinalProject
 {
-    public partial class frmMetrics : Form
+    public partial class frmReportes : Form
     {
-        public frmMetrics()
+        public frmReportes()
         {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Chart.Properties
+namespace FinalProject.Properties
 {
 
 

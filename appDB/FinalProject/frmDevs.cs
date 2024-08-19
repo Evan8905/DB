@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Main
+namespace FinalProject
 {
-    public partial class frmReportes : Form
+    public partial class frmDevs : Form
     {
-        public frmReportes()
+        public frmDevs()
         {
             InitializeComponent();
         }
