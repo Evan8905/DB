@@ -1,38 +1,48 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading.Tasks;
+using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data; // Asegúrate de que estás usando el namespace correcto para Conexion
+
 
 namespace Presentation
 {
     public partial class Reportes : Form
     {
+        // Instancia de formularios secundarios
+        private Form frmMetric = new frmMetrics();
+        private Form frmFilter = new frmFilters();
+
         public Reportes()
         {
             InitializeComponent();
-        }
+           // CheckDatabaseConnection(); // Llamada al método que verifica la conexión
 
-        private void pnReportsCTA_Click(object sender, EventArgs e)
+
+        }
+        /*private void CheckDatabaseConnection()
+        {
+             Asegúrate de que la conexión sea de tipo SqlConnection
+            SqlConnection conexion = ObtenerConexion();
+            if (conexion != null)
+            {
+                MessageBox.Show("Conexión exitosa");
+                conexion.Close(); // Cierra la conexión cuando termines de usarla
+            }
+            else
+            {
+                MessageBox.Show("No se pudo establecer la conexión");
+            }
+        }*/
+
+            private void pnReportsCTA_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Mostrando reportes", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        // Hay que instanciar el form para que funcione
-
-        private Form frmMetric = new frmMetrics();
-
-        private Form frmFilter = new frmFilters();
-
         private void openReportsChild(object formChild)
         {
             Form pnlReports = formChild as Form;
-            if (pnlReports != null) // Asegúrate de que pnlSale no sea null
+            if (pnlReports != null)
             {
                 if (this.pnMainContainer.Controls.Count > 0)
                     this.pnMainContainer.Controls.RemoveAt(0);
@@ -52,7 +62,7 @@ namespace Presentation
         private void openFiltersChild(object formChild)
         {
             Form pnlFilters = formChild as Form;
-            if (pnlFilters != null) // Asegúrate de que pnlSale no sea null
+            if (pnlFilters != null)
             {
                 if (this.pnMainContainer.Controls.Count > 0)
                     this.pnMainContainer.Controls.RemoveAt(0);
@@ -80,4 +90,3 @@ namespace Presentation
         }
     }
 }
-

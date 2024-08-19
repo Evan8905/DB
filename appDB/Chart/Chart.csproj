@@ -4,15 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6D75EA2F-B703-4E32-8F1E-D0BB06D05DCA}</ProjectGuid>
+    <ProjectGuid>{9400C4A8-83BE-4D85-A818-74DC0283D2D7}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Presentation</RootNamespace>
-    <AssemblyName>Presentation</AssemblyName>
+    <RootNamespace>Chart</RootNamespace>
+    <AssemblyName>Chart</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,19 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Presentation.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System">
-      <HintPath>..\..\..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
-    </Reference>
+    <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SqlClient, Version=4.6.1.6, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SqlClient.4.8.6\lib\net461\System.Data.SqlClient.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -63,28 +52,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFilters.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmFilters.Designer.cs">
-      <DependentUpon>frmFilters.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmMetrics.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmMetrics.Designer.cs">
-      <DependentUpon>frmMetrics.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmFilters.resx">
-      <DependentUpon>frmFilters.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmMetrics.resx">
-      <DependentUpon>frmMetrics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -94,9 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -109,21 +78,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\layout %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dashboardIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dashboard32px.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\dahboard32pxBlack.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Reports.png" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\myData.csproj">
