@@ -12,7 +12,7 @@ using System.Data.SqlClient;
 using System.Collections;
 
 
-namespace FinalProject
+/*namespace FinalProject
 {
     public partial class Main : Form
     {
@@ -50,6 +50,7 @@ namespace FinalProject
             dr.Close(); 
             conn.Close();
         }
+
 
 
 
@@ -136,4 +137,86 @@ namespace FinalProject
 
         }
     }
+}*/
+
+namespace FinalProject
+{
+    public partial class Main : Form
+    {
+        SqlConnection conn = new SqlConnection("Data Source=EVAN;Initial Catalog=FinalDBProject;Integrated Security=True");
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+        private frmFiltros frmFilter;
+        private frmReportes frmReport;
+        private Form frmDev = new frmDevs();
+
+        public Main()
+        {
+            InitializeComponent();
+
+            // Inicializar los formularios y pasar la referencia de frmReportes a frmFiltros
+            frmReport = new frmReportes();
+            frmFilter = new frmFiltros(frmReport);
+
+            //GrafCategorias();
+        }
+
+        private void leftSideMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        ArrayList Categoria = new ArrayList();
+        ArrayList Cant = new ArrayList();
+
+        /*private void GrafCategorias()
+        {
+            cmd = new SqlCommand("GetTop5Categories", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Cant.Add(dr.GetInt32(0));
+                Categoria.Add(dr.GetString(1));
+            }
+            chartCategorias.Series[0].Points.DataBindXY(Categoria, Cant);
+            dr.Close();
+            conn.Close();
+        }*/
+
+        private void openChildForm(Form formChild)
+        {
+            if (this.MainPanel.Controls.Count > 0)
+                this.MainPanel.Controls.RemoveAt(0);
+
+            formChild.TopLevel = false;
+            formChild.Dock = DockStyle.Fill;
+            this.MainPanel.Controls.Add(formChild);
+            this.MainPanel.Tag = formChild;
+            formChild.Show();
+        }
+
+        private void btnFilters_Click(object sender, EventArgs e)
+        {
+            openChildForm(frmFilter);
+        }
+
+        private void btnReports_Click(object sender, EventArgs e)
+        {
+            openChildForm(frmReport);
+        }
+
+        private void btnInfo_Click(object sender, EventArgs e)
+        {
+            openChildForm(frmDev);
+        }
+
+        private void chartCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
 }
+
