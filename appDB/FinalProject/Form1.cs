@@ -167,10 +167,10 @@ namespace FinalProject
 
         }
 
-        ArrayList Categoria = new ArrayList();
+        /*ArrayList Categoria = new ArrayList();
         ArrayList Cant = new ArrayList();
 
-        /*private void GrafCategorias()
+        private void GrafCategorias()
         {
             cmd = new SqlCommand("GetTop5Categories", conn);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -214,6 +214,11 @@ namespace FinalProject
         }
 
         private void chartCategorias_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Main_Load(object sender, EventArgs e)
         {
 
         }

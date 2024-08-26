@@ -59,8 +59,9 @@
             this.leftSideMenu.Controls.Add(this.panel1);
             this.leftSideMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.leftSideMenu.Location = new System.Drawing.Point(0, 0);
+            this.leftSideMenu.Margin = new System.Windows.Forms.Padding(2);
             this.leftSideMenu.Name = "leftSideMenu";
-            this.leftSideMenu.Size = new System.Drawing.Size(254, 549);
+            this.leftSideMenu.Size = new System.Drawing.Size(261, 446);
             this.leftSideMenu.TabIndex = 0;
             this.leftSideMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.leftSideMenu_Paint);
             // 
@@ -68,20 +69,23 @@
             // 
             this.panel5.Controls.Add(this.btnInfo);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 439);
+            this.panel5.Location = new System.Drawing.Point(0, 357);
+            this.panel5.Margin = new System.Windows.Forms.Padding(2);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(254, 110);
+            this.panel5.Size = new System.Drawing.Size(261, 89);
             this.panel5.TabIndex = 8;
             // 
             // btnInfo
             // 
             this.btnInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnInfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnInfo.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInfo.ForeColor = System.Drawing.Color.Black;
             this.btnInfo.Image = global::FinalProject.Properties.Resources.information;
-            this.btnInfo.Location = new System.Drawing.Point(72, 3);
+            this.btnInfo.Location = new System.Drawing.Point(98, 14);
+            this.btnInfo.Margin = new System.Windows.Forms.Padding(2);
             this.btnInfo.Name = "btnInfo";
-            this.btnInfo.Size = new System.Drawing.Size(90, 70);
+            this.btnInfo.Size = new System.Drawing.Size(54, 49);
             this.btnInfo.TabIndex = 0;
             this.btnInfo.UseVisualStyleBackColor = true;
             this.btnInfo.Click += new System.EventHandler(this.btnInfo_Click);
@@ -90,18 +94,21 @@
             // 
             this.panel4.Controls.Add(this.btnReports);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(0, 209);
+            this.panel4.Location = new System.Drawing.Point(0, 171);
+            this.panel4.Margin = new System.Windows.Forms.Padding(2);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(254, 56);
+            this.panel4.Size = new System.Drawing.Size(261, 46);
             this.panel4.TabIndex = 5;
             // 
             // btnReports
             // 
+            this.btnReports.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReports.Image = global::FinalProject.Properties.Resources.reportIcon;
             this.btnReports.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReports.Location = new System.Drawing.Point(24, 9);
+            this.btnReports.Location = new System.Drawing.Point(18, 4);
+            this.btnReports.Margin = new System.Windows.Forms.Padding(2);
             this.btnReports.Name = "btnReports";
-            this.btnReports.Size = new System.Drawing.Size(197, 44);
+            this.btnReports.Size = new System.Drawing.Size(224, 36);
             this.btnReports.TabIndex = 1;
             this.btnReports.Text = "Reportes";
             this.btnReports.UseVisualStyleBackColor = true;
@@ -111,18 +118,21 @@
             // 
             this.panel3.Controls.Add(this.btnFilters);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 153);
+            this.panel3.Location = new System.Drawing.Point(0, 125);
+            this.panel3.Margin = new System.Windows.Forms.Padding(2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(254, 56);
+            this.panel3.Size = new System.Drawing.Size(261, 46);
             this.panel3.TabIndex = 4;
             // 
             // btnFilters
             // 
+            this.btnFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFilters.Image = global::FinalProject.Properties.Resources.filtering;
             this.btnFilters.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFilters.Location = new System.Drawing.Point(24, 6);
+            this.btnFilters.Location = new System.Drawing.Point(18, 4);
+            this.btnFilters.Margin = new System.Windows.Forms.Padding(2);
             this.btnFilters.Name = "btnFilters";
-            this.btnFilters.Size = new System.Drawing.Size(197, 44);
+            this.btnFilters.Size = new System.Drawing.Size(224, 36);
             this.btnFilters.TabIndex = 0;
             this.btnFilters.Text = "Filtros";
             this.btnFilters.UseVisualStyleBackColor = true;
@@ -131,9 +141,10 @@
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 97);
+            this.panel2.Location = new System.Drawing.Point(0, 79);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 56);
+            this.panel2.Size = new System.Drawing.Size(261, 46);
             this.panel2.TabIndex = 3;
             // 
             // panel1
@@ -142,8 +153,9 @@
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(254, 97);
+            this.panel1.Size = new System.Drawing.Size(261, 79);
             this.panel1.TabIndex = 1;
             // 
             // lblLogo
@@ -152,40 +164,46 @@
             this.lblLogo.BackColor = System.Drawing.SystemColors.Desktop;
             this.lblLogo.Font = new System.Drawing.Font("Times New Roman", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLogo.ForeColor = System.Drawing.Color.White;
-            this.lblLogo.Location = new System.Drawing.Point(83, 48);
+            this.lblLogo.Location = new System.Drawing.Point(92, 30);
+            this.lblLogo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(166, 46);
+            this.lblLogo.Size = new System.Drawing.Size(129, 36);
             this.lblLogo.TabIndex = 1;
             this.lblLogo.Text = "Reportes";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::FinalProject.Properties.Resources.rLogo;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(2, 10);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(74, 72);
+            this.pictureBox1.Size = new System.Drawing.Size(71, 65);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // MainPanel
             // 
+            this.MainPanel.BackColor = System.Drawing.Color.Silver;
             this.MainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MainPanel.Location = new System.Drawing.Point(254, 0);
+            this.MainPanel.Location = new System.Drawing.Point(261, 0);
+            this.MainPanel.Margin = new System.Windows.Forms.Padding(2);
             this.MainPanel.Name = "MainPanel";
-            this.MainPanel.Size = new System.Drawing.Size(854, 549);
+            this.MainPanel.Size = new System.Drawing.Size(570, 446);
             this.MainPanel.TabIndex = 1;
             // 
             // Main
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1108, 549);
+            this.ClientSize = new System.Drawing.Size(831, 446);
             this.Controls.Add(this.MainPanel);
             this.Controls.Add(this.leftSideMenu);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Main_Load);
             this.leftSideMenu.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
