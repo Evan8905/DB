@@ -101,6 +101,8 @@ namespace FinalProject
             GrafCategorias();
             GrafCreditAmountPerClient();
             GrafCustomerCountByContractType();
+            GrafGetIncomeVsCreditAmount();
+            GrafGetCreditOverdueByType();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -191,24 +193,6 @@ namespace FinalProject
         ArrayList applications = new ArrayList();
         ArrayList TotalCredits = new ArrayList();
 
-
-        /*private void GrafCreditAmountPerClient()
-        {
-            cmd = new SqlCommand("GetCreditAmountPerClient", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conn.Open();
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                sk.Add(dr.GetInt32(0)); // SK_ID_CURR
-                applications.Add(dr.GetInt32(1)); // Num_Previous_Applications
-                TotalCredits.Add(dr.GetDecimal(2)); // Total_Credit_Amount (debe ser decimal)
-            }
-            Reporte2.Series[0].Points.DataBindXY(sk, applications, TotalCredits);
-            dr.Close();
-            conn.Close();
-        }*/
-
         private void GrafCreditAmountPerClient()
         {
             cmd = new SqlCommand("GetCreditAmountPerClient", conn);
@@ -245,21 +229,7 @@ namespace FinalProject
         ArrayList tipoContrato = new ArrayList();
         ArrayList CantClientes = new ArrayList();
 
-        /*private void GrafCustomerCountByContractType()
-        {
-            cmd = new SqlCommand("GetCustomerCountByContractType", conn);
-            cmd.CommandType = CommandType.StoredProcedure;
-            conn.Open();
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                CantClientes.Add(dr.GetInt32(0));
-                tipoContrato.Add(dr.GetString(1));
-            }
-            Reporte3.Series[0].Points.DataBindXY(tipoContrato, CantClientes);
-            dr.Close();
-            conn.Close();
-        }*/
+
         private void GrafCustomerCountByContractType()
         {
             cmd = new SqlCommand("GetCustomerCountByContractType", conn);
@@ -324,8 +294,88 @@ namespace FinalProject
             }
         }
 
+        ArrayList income = new ArrayList();
+        ArrayList creditAmount = new ArrayList();
+
+        private void GrafGetIncomeVsCreditAmount()
+        {
+            cmd = new SqlCommand("GetIncomeVsCreditAmount", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                // Intentar leer el primer valor como string
+                string income_str = dr.IsDBNull(0) ? "Desconocido" : dr[0].ToString();
+
+                // Intentar leer el segundo valor como string
+                string creditAmount_str = dr.IsDBNull(1) ? "0" : dr[1].ToString();
+
+                income.Add(income_str);
+                creditAmount.Add(creditAmount_str);
+            }
+
+            dr.Close();
+            conn.Close();
+
+            // Verificar que las listas tienen el mismo tamaño antes de vincular al gráfico
+            if (income.Count == creditAmount.Count)
+            {
+                // Vincular los datos al gráfico
+                Reporte4.Series[0].Points.DataBindXY(income, creditAmount);
+            }
+            else
+            {
+                MessageBox.Show("Error: El número de valores X e Y no coincide.");
+            }
+        }
+
+
+
+        ArrayList creditType = new ArrayList();
+        ArrayList numCredits = new ArrayList();
+
+        private void GrafGetCreditOverdueByType()
+        {
+            cmd = new SqlCommand("GetCreditOverdueByType", conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+            conn.Open();
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                // Intentar leer el primer valor como string (Credit Type)
+                string creditType_str = dr.IsDBNull(0) ? "Desconocido" : dr[0].ToString();
+
+                // Intentar leer el segundo valor como string (Number of Credits)
+                string numCredits_str = dr.IsDBNull(1) ? "0" : dr[1].ToString();
+
+                creditType.Add(creditType_str);
+                numCredits.Add(numCredits_str);
+            }
+
+            dr.Close();
+            conn.Close();
+
+            // Verificar que las listas tienen el mismo tamaño antes de vincular al gráfico
+            if (creditType.Count == numCredits.Count)
+            {
+                // Vincular los datos al gráfico
+                Reporte5.Series[0].Points.DataBindXY(creditType, numCredits);
+            }
+            else
+            {
+                MessageBox.Show("Error: El número de valores X e Y no coincide.");
+            }
+        }
 
         private void Reporte1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reporte4_Click(object sender, EventArgs e)
         {
 
         }

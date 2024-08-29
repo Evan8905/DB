@@ -1270,6 +1270,23 @@ CREATE PROC GetCreditAmountPerClient
 AS
 BEGIN
     -- Obtiene el monto total de crédito solicitado por cada cliente y el número de aplicaciones previas
+    SELECT
+        a.SK_ID_CURR,
+        COUNT(p.SK_ID_PREV) AS Num_Previous_Applications,
+        SUM(CAST(a.AMT_CREDIT AS DECIMAL(18, 2))) AS Total_Credit_Amount
+    FROM 
+        application_test a
+    LEFT JOIN 
+        previous_application p ON a.SK_ID_CURR = p.SK_ID_CURR
+    GROUP BY 
+        a.SK_ID_CURR;
+END;
+GO
+
+CREATE PROC GetCreditAmountPerClient5_
+AS
+BEGIN
+    -- Obtiene el monto total de crédito solicitado por cada cliente y el número de aplicaciones previas
     SELECT TOP 5
         a.SK_ID_CURR,
         COUNT(p.SK_ID_PREV) AS Num_Previous_Applications,
@@ -1283,7 +1300,9 @@ BEGIN
 END;
 GO
 
+
 EXEC GetCreditAmountPerClient;
+EXEC GetCreditAmountPerClient5_;
 
 /*SELECT 
     COLUMN_NAME, 
@@ -1313,7 +1332,7 @@ BEGIN
         Total_Overdue_Amount DESC;
 END;
 GO
---EXEC GetCreditOverdueByType;
+EXEC GetCreditOverdueByType;
 
 --3. Procedimiento para Identificar el Número de Clientes con Aplicaciones Previas por Tipo de Contrato
 
@@ -1332,7 +1351,8 @@ BEGIN
         Num_Customers DESC;
 END;
 GO
---EXEC GetCustomerCountByContractType;
+EXEC GetCustomerCountByContractType;
+
 -- 4. Procedimiento para Relacionar el Ingreso Total de los Clientes y el Monto de Crédito Solicitado
 
 CREATE PROC GetIncomeVsCreditAmount
@@ -1350,7 +1370,18 @@ BEGIN
         a.AMT_INCOME_TOTAL DESC;
 END;
 GO
---EXEC GetIncomeVsCreditAmount;
+EXEC GetIncomeVsCreditAmount;
+
+-------------------------------------------------------Consultar tipo de dato
+/*SELECT 
+    COLUMN_NAME, 
+    DATA_TYPE 
+FROM 
+    INFORMATION_SCHEMA.COLUMNS 
+WHERE 
+    TABLE_NAME = 'application_test' 
+    AND COLUMN_NAME IN ('AMT_INCOME_TOTAL', 'AMT_CREDIT');*/
+
 
 -- 5. Procedimiento para el Análisis Combinado de las Tablas application_test, previous_application, y bureau
 
@@ -1379,4 +1410,4 @@ BEGIN
         Total_Debt_Amount DESC;
 END;
 GO
---EXEC GetComprehensiveCreditReport;
+EXEC GetComprehensiveCreditReport;
